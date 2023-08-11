@@ -22,6 +22,8 @@ const storageRef = storage.ref();
 const Ticketinfo = () => {
   const navigate = useNavigate();
   const [price, setPrice] = useState("");
+  const [Category, setCategory] = useState("");
+  const [seat, setSeats] = useState("");
   const [concert, setConcert] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -52,8 +54,10 @@ const Ticketinfo = () => {
       await db.collection("eventtickets").add({
         concert,
         price,
+        seat,
         date,
         time,
+        Category,
         location,
         number,
         selectedImage,
@@ -68,6 +72,7 @@ const Ticketinfo = () => {
       setDate("");
       setTime("");
       setLocation("");
+      setSeats("");
       setNumber("");
       setSelectedImage("");
       setSelectedCategory("");
@@ -125,6 +130,35 @@ const Ticketinfo = () => {
             required
             placeholder="ticket name"
           />
+        </label>
+
+
+
+        <label>
+          <input
+            type="number"
+            value={concert}
+            onChange={(e) => setSeats(e.target.value)}
+            required
+            placeholder="No. Seats"
+          />
+        </label>
+
+
+
+        <label>
+          Event Category:
+          <select
+            value={Category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          >
+            <option value="">Select an event category</option>
+            <option value="Concert">Sport</option>
+            <option value="Conference">Seminar</option>
+            <option value="Party">Theatre</option>
+            <option value="Workshop">Music concert</option>
+          </select>
         </label>
         <label>
           Select a category:
