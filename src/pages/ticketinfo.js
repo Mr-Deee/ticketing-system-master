@@ -22,6 +22,7 @@ const storageRef = storage.ref();
 const Ticketinfo = () => {
   const navigate = useNavigate();
   const [price, setPrice] = useState("");
+  const [Category,setCategory]=useState("");
   const [concert, setConcert] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -40,6 +41,7 @@ const Ticketinfo = () => {
         price,
         date,
         time,
+        Category,
         location,
         number,
         selectedImage,
@@ -108,6 +110,17 @@ const Ticketinfo = () => {
             placeholder="ticket name"
           />
         </label>
+
+        <label>
+  Event Category:
+  <select value={Category} onChange={(e) => setCategory(e.target.value)} required>
+    <option value="">Select an event category</option>
+    <option value="Concert">Sport</option>
+    <option value="Conference">Seminar</option>
+    <option value="Party">Theatre</option>
+    <option value="Workshop">Music concert</option>
+  </select>
+</label>
         <label>
           <input
             type=""
