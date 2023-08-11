@@ -1,0 +1,49 @@
+.sellhero-section {
+  background-image: url('../../images/Footballbanner.jpg'); /* Replace 'your-hero-image.jpg' with the actual image URL */
+  background-size: cover;
+  background-position: center;
+  height: 660px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+}
+  
+  .sellhero-content {
+    color: white;
+    
+  }
+  
+  .sellhero-content h1 {
+    text-align: left;
+    font-size: 70px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .sellhero-content .h2 {
+    text-align: left;
+    font-size: 70px;
+    margin-bottom: -20px;
+    padding-left: 20px;
+  }
+  
+  .sellhero-content p {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sellhero-content .p1 {
+    font-size: 20px;
+    margin-bottom: -10px;
+  }
+  
+  .sellhero-content button {
+    padding: 20px 30px;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    color: black;
+    cursor: pointer;
+    float: left;
+    margin-left: 20px;
+  }
+  

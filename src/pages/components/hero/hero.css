@@ -1,0 +1,39 @@
+.hero-section {
+    background-image: url('../../images/homepage-small.jpg'); /* Replace 'your-hero-image.jpg' with the actual image URL */
+    background-size: cover;
+    background-position: center;
+    height: 550px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .hero-content .p1 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .hero-content button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
