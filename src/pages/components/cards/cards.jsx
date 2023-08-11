@@ -71,6 +71,8 @@ const Cards = () => {
             <br />
             <strong>{ticket.date}</strong> 
             <br />
+            <strong>{ticket.category}</strong> 
+            <br />
             <strong className="undefined">{ticket.time}</strong> 
             <br />
             <strong className="undefined">{ticket.location}</strong> 

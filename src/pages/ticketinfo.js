@@ -29,6 +29,20 @@ const Ticketinfo = () => {
   const [number, setNumber] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [seatsAvailable, setSeatsAvailable] = useState("");
+
+  const categories = [
+    "Sport",
+    "Cinema",
+    "Seminar",
+    "Theatre and Arts",
+    "Musical Concert",
+  ]; // List of categories for the dropdown
+
+  const handleCategorySelected = (event) => {
+    setSelectedCategory(event.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +57,8 @@ const Ticketinfo = () => {
         location,
         number,
         selectedImage,
+        category: selectedCategory,
+        seatsAvailable,
       });
 
       // Reset form fields
@@ -54,6 +70,8 @@ const Ticketinfo = () => {
       setLocation("");
       setNumber("");
       setSelectedImage("");
+      setSelectedCategory("");
+      setSeatsAvailable("");
 
       setShowPopup(true);
     } catch (error) {
@@ -109,6 +127,21 @@ const Ticketinfo = () => {
           />
         </label>
         <label>
+          Select a category:
+          <select
+            value={selectedCategory}
+            onChange={handleCategorySelected}
+            required
+          >
+            <option value="">Select a category</option>
+            {categories.map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
           <input
             type=""
             value={price}
@@ -123,6 +156,15 @@ const Ticketinfo = () => {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             placeholder="Date, eg.1 jan 2023"
+            required
+          />
+        </label>
+        <label>
+          <input
+            type="text"
+            value={seatsAvailable}
+            onChange={(e) => setSeatsAvailable(e.target.value)}
+            placeholder="Tickets Available, 50 tickets"
             required
           />
         </label>

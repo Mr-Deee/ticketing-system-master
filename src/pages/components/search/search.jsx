@@ -23,7 +23,7 @@ const SearchBar = ({ setSearchResults }) => {
   const handleSearch = () => {
     if (searchTerm.trim() !== '') {
       db.collection('eventtickets')
-        .where('concert', '==', searchTerm)
+        .where('category', '==', searchTerm)
         .get()
         .then((querySnapshot) => {
           const results = querySnapshot.docs.map((doc) => doc.data());
@@ -41,7 +41,8 @@ const SearchBar = ({ setSearchResults }) => {
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Enter item name"
+        placeholder="Enter a category. available categories Sport,Cinema,Seminar,
+        Theatre and Arts,Musical Concert,"
       />
       <button onClick={handleSearch}>Search</button>
     </div>
