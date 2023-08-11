@@ -137,7 +137,7 @@ const Ticketinfo = () => {
         <label>
           <input
             type="number"
-            value={concert}
+            value={seat}
             onChange={(e) => setSeats(e.target.value)}
             required
             placeholder="No. Seats"
@@ -160,7 +160,7 @@ const Ticketinfo = () => {
             <option value="Workshop">Music concert</option>
           </select>
         </label>
-        <label>
+        {/* <label>
           Select a category:
           <select
             value={selectedCategory}
@@ -174,7 +174,7 @@ const Ticketinfo = () => {
               </option>
             ))}
           </select>
-        </label>
+        </label> */}
         <label>
           <input
             type=""
