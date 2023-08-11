@@ -20,7 +20,8 @@ const db = firebase.firestore();// Initialize Firebase in this file
 const SearchBar = ({ setSearchResults }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = () => {
+  const handleSearch = async (e) => {
+
     if (searchTerm.trim() !== '') {
       db.collection('eventtickets')
         .where('category', '==', searchTerm)
@@ -33,6 +34,7 @@ const SearchBar = ({ setSearchResults }) => {
           console.error('Error searching for items:', error);
         });
     }
+
   };
 
   return (

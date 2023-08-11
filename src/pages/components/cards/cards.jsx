@@ -61,7 +61,7 @@ const Cards = () => {
     <div className="cards-container">
       <div className="card-container">
         {items.map((ticket) => (
-          <Link to={`/purchase/${ticket.id}/${encodeURIComponent(ticket.concert)}/${encodeURIComponent(ticket.price)}/${encodeURIComponent(ticket.date)}/${encodeURIComponent(ticket.time)}/${encodeURIComponent(ticket.location)}/${encodeURIComponent(ticket.number)}`} className="link1">
+          <Link to={`/purchase/${ticket.id}/${encodeURIComponent(ticket.concert)}/${encodeURIComponent(ticket.category)}/${encodeURIComponent(ticket.price)}/${encodeURIComponent(ticket.date)}/${encodeURIComponent(ticket.time)}/${encodeURIComponent(ticket.location)}/${encodeURIComponent(ticket.number)}`} className="link1">
           <div className="card" key={ticket.id}>
             <div className="cardcontent"> 
             
